@@ -1,18 +1,18 @@
 {% extends 'app/base.html' %}
 {% block body_block %}
-<h1 style="color: #014505;font-family: Sigmar One;font-size: 4em;"><b style="text-decoration: underline";>All Complaints : </b></h1><br><br><br>
+<h1 style="color: black;font-family: SNoto Sans;font-size: 4em;"><b style="text-decoration: underline";>All Complaints : </b></h1><br><br><br>
 {% for post in post_list %}
-  <div class="container" style="background-color: #a10546;font-family: Lobster;color: white;border-style: outset;border: 8px solid #3d0229;">
+  <div class="container" style="background-color: #575452;font-family: Noto Sans;color: white;">
       <div class="card img-fluid" style="width:500px">
         <div class="card-img-overlay">
-            <h3 style="font-size: 3.5em;" class="card-title">{{post.issue}}</h3>
-            <h5 style="font-size: 3.5em;" class="card-title">{{post.name}}</h5>
-            <h5 style="font-size: 3.5em;" class="card-title">{{post.roll}}</h5>
-            <h5 style="font-size: 3.5em;" class="card-title">{{post.hall}}</h5>
-            <h5 style="font-size: 3.5em;" class="card-title">{{post.room}}</h5>
-            <p style="font-size: 1.5em;" class="card-text">{{post.create_date}}</p>
-            <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary">Open/Edit</a>
-            <a href="{% url 'post_remove' pk=post.pk %}" class="btn btn-primary">Remove</a>
+            <h3 style="font-size: 1.5em;" class="card-title"><b>Issue</b> : {{post.issue}}</h3>
+            <h5 style="font-size: 1.5em;" class="card-title"><b>Name</b> : {{post.name}}</h5>
+            <h5 style="font-size: 1.5em;" class="card-title"><b>Roll No</b> : {{post.roll}}</h5>
+            <h5 style="font-size: 1.5em;" class="card-title"><b>Hall of Residence</b> : {{post.hall}}</h5>
+            <h5 style="font-size: 1.5em;" class="card-title"><b>Room No</b> : {{post.room}}</h5>
+            <p style="font-size: 1.5em;" class="card-text"><b>Date/Time</b> : {{post.create_date}}</p>
+            <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary"><b>Open/Edit</b></a>
+            <a href="{% url 'post_remove' pk=post.pk %}" class="btn btn-primary"><b>Remove</b></a>
         </div>
       </div>
     </div><br><br>

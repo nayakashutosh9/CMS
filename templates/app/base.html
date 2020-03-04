@@ -7,21 +7,36 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Lobster|Sigmar+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+  <style>
+    .parallax {
+      /* The image used */
+      background-image: url("static/images/1.jpg");
+    
+      /* Set a specific height */
+      min-height: 500px; 
+    
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    </style>
 </head>
 <body>
 
-  <nav class="navbar navbar-inverse">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
-        <a style="font-size: 4em;" class="navbar-brand" href="{% url 'post_list' %}">NITR CMS</a>
+        <a style="font-size: 3em;" class="navbar-brand" href="{% url 'post_list' %}">NITR CMS</a>
       </div>
-      <ul class="nav navbar-nav">
-        <li style="font-size: 2em;"  class="active"><a href="{% url 'post_list' %}">Home</a></li style="font-size: 4em;">
-        <li style="font-size: 2em;" ><a href="{% url 'post_new' %}">Add your query</a></li style="font-size: 4em;">
+      <ul class="nav navbar-nav navbar-right">
+        <li style="font-size: 1.5em;" ><a href="{% url 'post_new' %}"><span class="glyphicon glyphicon-plus"> </span> Add your query</a></li style="font-size: 4em;">
       </ul>
     </div>
   </nav>
+  <div class="parallax"></div>
 
   <div class="container">
     {% block body_block %}
